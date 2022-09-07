@@ -39,7 +39,7 @@
 
             <a class="navbar-brand" href="#">Legion</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <!-- <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#crdts">CRDTs</a></li>
@@ -49,7 +49,7 @@
                 <li><a href="/pacman/index.html">Pacman</a></li>
                 <li><a href="/shooter"><span style="color: #FFFFFF;"><b>Shooter</b></span></a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
 </nav>
 <div class="panel panel-default" style="position:fixed;bottom: 0px;z-index: 9999;margin-bottom: 0px;">
@@ -91,7 +91,7 @@
     <div class="jumbotron">
         <h1>Legion</h1>
 
-        <p>Legion lets you easily create or extend web applications with peer-to-peer interactions!</p>
+        <!-- <p>Legion lets you easily create or extend web applications with peer-to-peer interactions!</p> -->
 
         <p>Legion offers:</p>
         <ul>
@@ -113,7 +113,7 @@
             <a target="_blank" href="https://github.com/albertlinde/Legion">https://github.com/albertlinde/Legion</a>
         </p>
 
-        <p>Legion is under continuous development and not production-stable. Work in progress:</p>
+        <!-- <p>Legion is under continuous development and not production-stable. Work in progress:</p>
         <ul>
             <li>
                 Peer-to-peer coordination (to lower the amount of resources required on the central server).
@@ -130,7 +130,7 @@
             <li>
                 Additional CRDTs.
             </li>
-        </ul>
+        </ul> -->
 
 
         <p style="font-size:85%;">Legion is a result from the <a href="https://syncfree.lip6.fr" target="_blank">European
@@ -196,7 +196,9 @@
     });
 </pre>
 
-    <div>
+    <!-- Data Types Hidden -->
+
+    <!-- <div>
         <div class="page-header row">
             <h1 id="crdts">Data types</h1>
             <p>The main use of legion is sharing mutable-data between users.</p>
@@ -212,7 +214,7 @@
                 <b>All clients connected to the group will replicate this object.</b>
                 Details on restricting creating new objects can be found within the GitHub tutorials.
             </p>
-        </div>
+        </div> -->
         <div class="row">
             <div id="example_counter">
                 <h2>Counter</h2>
@@ -290,7 +292,10 @@
 
                 </div>
             </div>
-            <div id="example_set">
+
+            <!-- Set Section hidden -->
+
+            <!-- <div id="example_set">
                 <h2>Set</h2>
                 <p>Sets keep objects only once.</p>
                 <pre class="prettyprint linenums">
@@ -305,8 +310,8 @@
     set.setOnStateChange(function (updates, meta) {//called when data is updated
         console.log(updates);
         console.log(meta);
-    });</pre>
-                <div class="row">
+    });</pre> -->
+                <!-- <div class="row">
                     <div class="col-md">
                         <div class="container">
                             <div class="panel panel-default">
@@ -410,8 +415,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="example_map">
+            </div> -->
+
+            <!-- Map Section hidden -->
+
+            <!-- <div id="example_map">
                 <h2>Map</h2>
                 <p>Maps keep key-value pairs.</p>
                 <pre class="prettyprint linenums">
@@ -429,8 +437,8 @@
     map.setOnStateChange(function (updates, meta) {//called when data is updated
         console.log(updates);
         console.log(meta);
-    });</pre>
-                <div class="row">
+    });</pre> -->
+                <!-- <div class="row">
                     <div class="col-md">
                         <div class="container">
                             <div class="panel panel-default">
@@ -537,8 +545,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="example_list">
+            </div> -->
+
+            <!-- List Section Hidden  -->
+
+
+            <!-- <div id="example_list">
                 <h2>List</h2>
                 <p>Lists keep a ordered list of elements.</p>
                 <pre class="prettyprint linenums">
@@ -553,8 +565,8 @@
     list.setOnStateChange(function (updates, meta) {//called when data is updated
         console.log(updates);
         console.log(meta);
-    });</pre>
-                <div class="row">
+    });</pre> -->
+                <!-- <div class="row">
                     <div class="col-md">
                         <div class="container">
                             <div class="panel panel-default">
@@ -665,9 +677,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="page-header row">
+        <!-- Messaging Section Hidden -->
+
+        <!-- <div class="page-header row">
             <h1 id="messaging">Messaging</h1>
             <p>Besides sharing objects, legion can also be used to send messages directly to the group.</p>
             <p>Currently supported primitives are broadcast and unicast.</p>
@@ -681,9 +695,9 @@
     messageAPI.setHandlerFor("Message", function(message){
         //use messsage.data
     });
-    messageAPI.broadcast("Message", {value: "Hi.", from:"Albert"});</pre>
+    messageAPI.broadcast("Message", {value: "Hi.", from:"Albert"});</pre> -->
 
-            <div class="container">
+            <!-- <div class="container">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Messaging example</h3>
@@ -705,7 +719,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <div id="refs" class="page-header">
