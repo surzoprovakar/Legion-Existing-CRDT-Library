@@ -238,8 +238,8 @@
                             <thead>
                             <tr>
                                 <th>Counter</th>
-                                <th>Add(1)</th>
-                                <th>Remove(1)</th>
+                                <th>Add(x)</th>
+                                <th>Remove(x)</th>
                                 <th>Value</th>
                             </tr>
                             </thead>
@@ -987,23 +987,30 @@
             messageAPI.broadcast("Message", {value: message, from: name});
         }
     };
+   
     var inc_1 = function () {
-        counter_1.increment(1);
+        var x = Math.floor(Math.random() * 10) + 1;
+        counter_1.increment(x);
     };
     var dec_1 = function () {
-        counter_1.decrement(1);
+        var x = Math.floor(Math.random() * 10) + 1;
+        counter_1.decrement(x);
     };
     var inc_2 = function () {
-        counter_2.increment(1);
+        var x = Math.floor(Math.random() * 10) + 1;
+        counter_2.increment(x);
     };
     var dec_2 = function () {
-        counter_2.decrement(1);
+        var x = Math.floor(Math.random() * 10) + 1;
+        counter_2.decrement(x);
     };
     var inc_3 = function () {
-        counter_3.increment(1);
+        var x = Math.floor(Math.random() * 10) + 1;
+        counter_3.increment(x);
     };
     var dec_3 = function () {
-        counter_3.decrement(1);
+        var x = Math.floor(Math.random() * 10) + 1;
+        counter_3.decrement(x);
     };
     // var setChanged = function (list_html_id, array, number) {
     //     $(list_html_id)[0].innerHTML = "";
