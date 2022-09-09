@@ -7,9 +7,11 @@
 # clean:
 # 	@sudo fuser -k 8000/tcp
 
-build:
+server:
 	sudo node ProdServer.js
-run:
+client:
 	sudo node ObjectsServer.js
-clean:
+clean-server:
 	sudo fuser -k 80/tcp
+clean-client:
+	sudo fuser -k 8000/tcp

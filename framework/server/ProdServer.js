@@ -156,9 +156,9 @@ function initService() {
             permitted: function (id, type) {
                 return false; //no more objects for the example/index page.
             },
-            lists: ["list_1", "list_2", "list_3"],
-            maps: ["map_1", "map_2", "map_3"],
-            sets: ["set_1", "set_2", "set_3"],
+            //lists: ["list_1", "list_2", "list_3"],
+            //maps: ["map_1", "map_2", "map_3"],
+            //sets: ["set_1", "set_2", "set_3"],
             counters: ["counter_1", "counter_2", "counter_3"]
         }
     };

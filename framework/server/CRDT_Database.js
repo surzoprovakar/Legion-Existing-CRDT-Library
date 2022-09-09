@@ -13,9 +13,9 @@ var Config = require('./config.js');
 var CRDT_LIB = {};
 
 CRDT_LIB.Counter = require('./../shared/crdtLib/deltaCounter.js').DELTA_Counter;
-CRDT_LIB.Set = require('./../shared/crdtLib/deltaSet.js').DELTA_Set;
-CRDT_LIB.Map = require('./../shared/crdtLib/deltaMap.js').DELTA_Map;
-CRDT_LIB.List = require('./../shared/crdtLib/deltaList.js').DELTA_List;
+//CRDT_LIB.Set = require('./../shared/crdtLib/deltaSet.js').DELTA_Set;
+//CRDT_LIB.Map = require('./../shared/crdtLib/deltaMap.js').DELTA_Map;
+//CRDT_LIB.List = require('./../shared/crdtLib/deltaList.js').DELTA_List;
 
 function CRDT_Database(messaging, peerSyncs, g) {
     this.g = g;
@@ -48,9 +48,9 @@ function CRDT_Database(messaging, peerSyncs, g) {
     this.legion = {id: this.id};
 
     this.defineCRDT(CRDT_LIB.Counter);
-    this.defineCRDT(CRDT_LIB.Set);
-    this.defineCRDT(CRDT_LIB.Map);
-    this.defineCRDT(CRDT_LIB.List);
+    //this.defineCRDT(CRDT_LIB.Set);
+    //this.defineCRDT(CRDT_LIB.Map);
+    //this.defineCRDT(CRDT_LIB.List);
 
     var db = this;
     this.handlers = {
@@ -91,7 +91,7 @@ function CRDT_Database(messaging, peerSyncs, g) {
 
 CRDT_Database.prototype.clearPeersQueue = function () {
     if (this.peersQueue.size() > 0) {
-        console.log("Messages in peers queue: " + this.peersQueue.size());
+        //console.log("Messages in peers queue: " + this.peersQueue.size());
         var pop = this.peersQueue.removeFirst();
         var opList = [];
         var lastFrom = null;
@@ -141,6 +141,7 @@ CRDT_Database.prototype.saveToDisk = function () {
     if (this.g.nodes.size() > 0) {
         console.log("Group active: " + this.g.id);
         var keys = this.crdts.keys();
+        //console.log(keys)
         for (var i = 0; i < keys.length; i++) {
             console.log("    KEY: " + keys[i] + " VALUE: " + JSON.stringify(this.get(keys[i]).getValue()) + " VV: " + JSON.stringify(this.get(keys[i]).versionVector.toJSONString()));
         }

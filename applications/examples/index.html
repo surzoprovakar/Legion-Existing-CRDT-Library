@@ -773,9 +773,9 @@
     var objectStore = null;
     var messageAPI = null;
     var counter_1, counter_2, counter_3;
-    var map_1, map_2, map_3;
-    var set_1, set_2, set_3;
-    var list_1, list_2, list_3;
+    //var map_1, map_2, map_3;
+    //var set_1, set_2, set_3;
+    //var list_1, list_2, list_3;
 
     var g_id = "default";
 
@@ -846,58 +846,58 @@
         });
 
         //Set:
-        set_1 = objectStore.getOrCreate("set_1", legion.Set);
-        set_2 = objectStore.getOrCreate("set_2", legion.Set);
-        set_3 = objectStore.getOrCreate("set_3", legion.Set);
+        // set_1 = objectStore.getOrCreate("set_1", legion.Set);
+        // set_2 = objectStore.getOrCreate("set_2", legion.Set);
+        // set_3 = objectStore.getOrCreate("set_3", legion.Set);
 
-        set_1.setOnStateChange(function (updates, meta) {
-            console.log("Set 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(set_1.asArray()));
-            setChanged("#list_set_1", set_1.asArray(), 1);
-        });
-        set_2.setOnStateChange(function (updates, meta) {
-            console.log("Set 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(set_2.asArray()));
-            setChanged("#list_set_2", set_2.asArray(), 2);
-        });
-        set_3.setOnStateChange(function (updates, meta) {
-            console.log("Set 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(set_3.asArray()));
-            setChanged("#list_set_3", set_3.asArray(), 3);
-        });
+        // set_1.setOnStateChange(function (updates, meta) {
+        //     console.log("Set 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(set_1.asArray()));
+        //     setChanged("#list_set_1", set_1.asArray(), 1);
+        // });
+        // set_2.setOnStateChange(function (updates, meta) {
+        //     console.log("Set 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(set_2.asArray()));
+        //     setChanged("#list_set_2", set_2.asArray(), 2);
+        // });
+        // set_3.setOnStateChange(function (updates, meta) {
+        //     console.log("Set 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(set_3.asArray()));
+        //     setChanged("#list_set_3", set_3.asArray(), 3);
+        // });
 
         //Map:
-        map_1 = objectStore.getOrCreate("map_1", legion.Map);
-        map_2 = objectStore.getOrCreate("map_2", legion.Map);
-        map_3 = objectStore.getOrCreate("map_3", legion.Map);
+        // map_1 = objectStore.getOrCreate("map_1", legion.Map);
+        // map_2 = objectStore.getOrCreate("map_2", legion.Map);
+        // map_3 = objectStore.getOrCreate("map_3", legion.Map);
 
-        map_1.setOnStateChange(function (updates, meta) {
-            console.log("Map 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(map_1.asArray()));
-            mapChanged("#list_map_1", map_1.asArray(), 1);
-        });
-        map_2.setOnStateChange(function (updates, meta) {
-            console.log("Map 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(map_2.asArray()));
-            mapChanged("#list_map_2", map_2.asArray(), 2);
-        });
-        map_3.setOnStateChange(function (updates, meta) {
-            console.log("Map 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(map_3.asArray()));
-            mapChanged("#list_map_3", map_3.asArray(), 3);
-        });
+        // map_1.setOnStateChange(function (updates, meta) {
+        //     console.log("Map 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(map_1.asArray()));
+        //     mapChanged("#list_map_1", map_1.asArray(), 1);
+        // });
+        // map_2.setOnStateChange(function (updates, meta) {
+        //     console.log("Map 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(map_2.asArray()));
+        //     mapChanged("#list_map_2", map_2.asArray(), 2);
+        // });
+        // map_3.setOnStateChange(function (updates, meta) {
+        //     console.log("Map 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " array: " + JSON.stringify(map_3.asArray()));
+        //     mapChanged("#list_map_3", map_3.asArray(), 3);
+        // });
 
         //List:
-        list_1 = objectStore.getOrCreate("list_1", legion.List);
-        list_2 = objectStore.getOrCreate("list_2", legion.List);
-        list_3 = objectStore.getOrCreate("list_3", legion.List);
+        // list_1 = objectStore.getOrCreate("list_1", legion.List);
+        // list_2 = objectStore.getOrCreate("list_2", legion.List);
+        // list_3 = objectStore.getOrCreate("list_3", legion.List);
 
-        list_1.setOnStateChange(function (updates, meta) {
-            console.log("List 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(list_1.getValue()));
-            listChanged("#list_list_1", list_1.asArray());
-        });
-        list_2.setOnStateChange(function (updates, meta) {
-            console.log("List 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(list_2.getValue()));
-            listChanged("#list_list_2", list_2.asArray());
-        });
-        list_3.setOnStateChange(function (updates, meta) {
-            console.log("List 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(list_3.getValue()));
-            listChanged("#list_list_3", list_3.asArray());
-        });
+        // list_1.setOnStateChange(function (updates, meta) {
+        //     console.log("List 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(list_1.getValue()));
+        //     listChanged("#list_list_1", list_1.asArray());
+        // });
+        // list_2.setOnStateChange(function (updates, meta) {
+        //     console.log("List 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(list_2.getValue()));
+        //     listChanged("#list_list_2", list_2.asArray());
+        // });
+        // list_3.setOnStateChange(function (updates, meta) {
+        //     console.log("List 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(list_3.getValue()));
+        //     listChanged("#list_list_3", list_3.asArray());
+        // });
 
 
         //Counter:
@@ -912,43 +912,43 @@
         $("#counter_3_value")[0].textContent = counter_3.getValue();
 
         //Set:
-        $("#add_1_set").removeClass("disabled");
-        $("#remove_1_set").removeClass("disabled");
+        // $("#add_1_set").removeClass("disabled");
+        // $("#remove_1_set").removeClass("disabled");
 
-        $("#add_2_set").removeClass("disabled");
-        $("#remove_2_set").removeClass("disabled");
+        // $("#add_2_set").removeClass("disabled");
+        // $("#remove_2_set").removeClass("disabled");
 
-        $("#add_3_set").removeClass("disabled");
-        $("#remove_3_set").removeClass("disabled");
+        // $("#add_3_set").removeClass("disabled");
+        // $("#remove_3_set").removeClass("disabled");
 
-        setChanged("#list_set_1", set_1.asArray(), 1);
-        setChanged("#list_set_2", set_2.asArray(), 2);
-        setChanged("#list_set_3", set_3.asArray(), 3);
+        // setChanged("#list_set_1", set_1.asArray(), 1);
+        // setChanged("#list_set_2", set_2.asArray(), 2);
+        // setChanged("#list_set_3", set_3.asArray(), 3);
 
         //Map:
-        $("#add_1_map").removeClass("disabled");
-        $("#remove_1_map").removeClass("disabled");
+        // $("#add_1_map").removeClass("disabled");
+        // $("#remove_1_map").removeClass("disabled");
 
-        $("#add_2_map").removeClass("disabled");
-        $("#remove_2_map").removeClass("disabled");
+        // $("#add_2_map").removeClass("disabled");
+        // $("#remove_2_map").removeClass("disabled");
 
-        $("#add_3_map").removeClass("disabled");
-        $("#remove_3_map").removeClass("disabled");
+        // $("#add_3_map").removeClass("disabled");
+        // $("#remove_3_map").removeClass("disabled");
 
-        mapChanged("#list_map_1", map_1.asArray(), 1);
-        mapChanged("#list_map_2", map_2.asArray(), 2);
-        mapChanged("#list_map_3", map_3.asArray(), 3);
+        // mapChanged("#list_map_1", map_1.asArray(), 1);
+        // mapChanged("#list_map_2", map_2.asArray(), 2);
+        // mapChanged("#list_map_3", map_3.asArray(), 3);
 
         //List:
-        $("#add_1_list").removeClass("disabled");
-        $("#remove_1_list").removeClass("disabled");
-        listChanged("#list_list_1", list_1.asArray());
-        $("#add_2_list").removeClass("disabled");
-        $("#remove_2_list").removeClass("disabled");
-        listChanged("#list_list_2", list_2.asArray());
-        $("#add_3_list").removeClass("disabled");
-        $("#remove_3_list").removeClass("disabled");
-        listChanged("#list_list_3", list_3.asArray());
+        // $("#add_1_list").removeClass("disabled");
+        // $("#remove_1_list").removeClass("disabled");
+        // listChanged("#list_list_1", list_1.asArray());
+        // $("#add_2_list").removeClass("disabled");
+        // $("#remove_2_list").removeClass("disabled");
+        // listChanged("#list_list_2", list_2.asArray());
+        // $("#add_3_list").removeClass("disabled");
+        // $("#remove_3_list").removeClass("disabled");
+        // listChanged("#list_list_3", list_3.asArray());
     }, function (server, data) {
         if (server) {
             console.info("Sync done with server.");
@@ -1005,107 +1005,107 @@
     var dec_3 = function () {
         counter_3.decrement(1);
     };
-    var setChanged = function (list_html_id, array, number) {
-        $(list_html_id)[0].innerHTML = "";
-        for (var i = 0; i < array.length; i++) {
-            $(list_html_id)[0].innerHTML = $(list_html_id)[0].innerHTML + ('<li class="list-group-item">' + array[i] + '</li>');
-        }
-        $("#set_" + number + "_value")[0].textContent = array.length;
-    };
+    // var setChanged = function (list_html_id, array, number) {
+    //     $(list_html_id)[0].innerHTML = "";
+    //     for (var i = 0; i < array.length; i++) {
+    //         $(list_html_id)[0].innerHTML = $(list_html_id)[0].innerHTML + ('<li class="list-group-item">' + array[i] + '</li>');
+    //     }
+    //     $("#set_" + number + "_value")[0].textContent = array.length;
+    // };
 
-    var add_1_set = function () {
-        set_1.add($("#set_input")[0].value);
-    };
-    var add_2_set = function () {
-        set_2.add($("#set_input")[0].value);
-    };
-    var add_3_set = function () {
-        set_3.add($("#set_input")[0].value);
-    };
-    var remove_1_set = function () {
-        set_1.remove($("#set_input")[0].value);
-    };
-    var remove_2_set = function () {
-        set_2.remove($("#set_input")[0].value);
-    };
-    var remove_3_set = function () {
-        set_3.remove($("#set_input")[0].value);
-    };
-    var mapChanged = function (list_html_id, array, type) {
-        $(list_html_id)[0].innerHTML = "";
-        for (var i = 0; i < array.length; i++) {
-            $(list_html_id)[0].innerHTML = $(list_html_id)[0].innerHTML + ('<li class="list-group-item">' + array[i][0] + " : [" + array[i][1] + ']</li>');
-        }
-        $("#map_" + type + "_value")[0].textContent = array.length;
-    };
+    // var add_1_set = function () {
+    //     set_1.add($("#set_input")[0].value);
+    // };
+    // var add_2_set = function () {
+    //     set_2.add($("#set_input")[0].value);
+    // };
+    // var add_3_set = function () {
+    //     set_3.add($("#set_input")[0].value);
+    // };
+    // var remove_1_set = function () {
+    //     set_1.remove($("#set_input")[0].value);
+    // };
+    // var remove_2_set = function () {
+    //     set_2.remove($("#set_input")[0].value);
+    // };
+    // var remove_3_set = function () {
+    //     set_3.remove($("#set_input")[0].value);
+    // };
+    // var mapChanged = function (list_html_id, array, type) {
+    //     $(list_html_id)[0].innerHTML = "";
+    //     for (var i = 0; i < array.length; i++) {
+    //         $(list_html_id)[0].innerHTML = $(list_html_id)[0].innerHTML + ('<li class="list-group-item">' + array[i][0] + " : [" + array[i][1] + ']</li>');
+    //     }
+    //     $("#map_" + type + "_value")[0].textContent = array.length;
+    // };
 
-    var getKeyValue = function () {
-        return {k: $("#map_key")[0].value, v: $("#map_value")[0].value};
-    };
+    // var getKeyValue = function () {
+    //     return {k: $("#map_key")[0].value, v: $("#map_value")[0].value};
+    // };
 
-    var add_1_map = function () {
-        var kv = getKeyValue();
-        map_1.set(kv.k, kv.v);
-    };
-    var add_2_map = function () {
-        var kv = getKeyValue();
-        map_2.set(kv.k, kv.v);
-    };
-    var add_3_map = function () {
-        var kv = getKeyValue();
-        map_3.set(kv.k, kv.v);
-    };
-    var remove_1_map = function () {
-        var kv = getKeyValue();
-        map_1.delete(kv.k);
-    };
-    var remove_2_map = function () {
-        var kv = getKeyValue();
-        map_2.delete(kv.k);
-    };
-    var remove_3_map = function () {
-        var kv = getKeyValue();
-        map_3.delete(kv.k);
-    };
-    var listChanged = function (list_html_id, array) {
-        $(list_html_id)[0].innerHTML = "";
-        for (var i = 0; i < array.length; i++) {
-            $(list_html_id)[0].innerHTML = $(list_html_id)[0].innerHTML + ('<li class="list-group-item">' + array[i] + '</li>');
-        }
+    // var add_1_map = function () {
+    //     var kv = getKeyValue();
+    //     map_1.set(kv.k, kv.v);
+    // };
+    // var add_2_map = function () {
+    //     var kv = getKeyValue();
+    //     map_2.set(kv.k, kv.v);
+    // };
+    // var add_3_map = function () {
+    //     var kv = getKeyValue();
+    //     map_3.set(kv.k, kv.v);
+    // };
+    // var remove_1_map = function () {
+    //     var kv = getKeyValue();
+    //     map_1.delete(kv.k);
+    // };
+    // var remove_2_map = function () {
+    //     var kv = getKeyValue();
+    //     map_2.delete(kv.k);
+    // };
+    // var remove_3_map = function () {
+    //     var kv = getKeyValue();
+    //     map_3.delete(kv.k);
+    // };
+    // var listChanged = function (list_html_id, array) {
+    //     $(list_html_id)[0].innerHTML = "";
+    //     for (var i = 0; i < array.length; i++) {
+    //         $(list_html_id)[0].innerHTML = $(list_html_id)[0].innerHTML + ('<li class="list-group-item">' + array[i] + '</li>');
+    //     }
 
-        $("#list_1_value")[0].textContent = list_1.size();
-        $("#list_2_value")[0].textContent = list_2.size();
-        $("#list_3_value")[0].textContent = list_3.size();
-    };
+    //     $("#list_1_value")[0].textContent = list_1.size();
+    //     $("#list_2_value")[0].textContent = list_2.size();
+    //     $("#list_3_value")[0].textContent = list_3.size();
+    // };
 
-    var getKeyValue_list = function () {
-        return {k: parseInt($("#list_key")[0].value), v: $("#list_value")[0].value};
-    };
+    // var getKeyValue_list = function () {
+    //     return {k: parseInt($("#list_key")[0].value), v: $("#list_value")[0].value};
+    // };
 
-    var add_1_list = function () {
-        var kv = getKeyValue_list();
-        list_1.add(kv.k, kv.v);
-    };
-    var add_2_list = function () {
-        var kv = getKeyValue_list();
-        list_2.add(kv.k, kv.v);
-    };
-    var add_3_list = function () {
-        var kv = getKeyValue_list();
-        list_3.add(kv.k, kv.v);
-    };
-    var remove_1_list = function () {
-        var kv = getKeyValue_list();
-        list_1.delete(kv.k);
-    };
-    var remove_2_list = function () {
-        var kv = getKeyValue_list();
-        list_2.delete(kv.k);
-    };
-    var remove_3_list = function () {
-        var kv = getKeyValue_list();
-        list_3.delete(kv.k);
-    };
+    // var add_1_list = function () {
+    //     var kv = getKeyValue_list();
+    //     list_1.add(kv.k, kv.v);
+    // };
+    // var add_2_list = function () {
+    //     var kv = getKeyValue_list();
+    //     list_2.add(kv.k, kv.v);
+    // };
+    // var add_3_list = function () {
+    //     var kv = getKeyValue_list();
+    //     list_3.add(kv.k, kv.v);
+    // };
+    // var remove_1_list = function () {
+    //     var kv = getKeyValue_list();
+    //     list_1.delete(kv.k);
+    // };
+    // var remove_2_list = function () {
+    //     var kv = getKeyValue_list();
+    //     list_2.delete(kv.k);
+    // };
+    // var remove_3_list = function () {
+    //     var kv = getKeyValue_list();
+    //     list_3.delete(kv.k);
+    // };
 </script>
 <script>
     /*
