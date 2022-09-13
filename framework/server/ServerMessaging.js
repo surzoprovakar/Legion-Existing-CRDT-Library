@@ -50,7 +50,7 @@ ServerMessaging.prototype.broadcastMessage = function (message, except) {
         }
         mess += " " + except[j];
     }
-    console.log(mess);
+    //console.log(mess);
 
     var peers = this.peerSyncs.keys();
     for (var i = 0; i < peers.length; i++) {
@@ -63,7 +63,7 @@ ServerMessaging.prototype.broadcastMessage = function (message, except) {
                     send = false;
         if (send) {
             if (this.peerSyncs.get(peers[i]).peerConnection.readyState == 1) {
-                console.log(" - " + peers[i]);
+                //console.log(" - " + peers[i]);
                 this.peerSyncs.get(peers[i]).send(message);
             } else {
                 var ps = this.peerSyncs.get(peers[i]);

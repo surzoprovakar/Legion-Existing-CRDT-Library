@@ -142,9 +142,11 @@ CRDT_Database.prototype.saveToDisk = function () {
         console.log("Group active: " + this.g.id);
         var keys = this.crdts.keys();
         //console.log(keys)
+        console.log("\n")
         for (var i = 0; i < keys.length; i++) {
-            console.log("    KEY: " + keys[i] + " VALUE: " + JSON.stringify(this.get(keys[i]).getValue()) + " VV: " + JSON.stringify(this.get(keys[i]).versionVector.toJSONString()));
+            console.log("    KEY: " + keys[i] + " VALUE: " + JSON.stringify(this.get(keys[i]).getValue())) //+ " VV: " + JSON.stringify(this.get(keys[i]).versionVector.toJSONString()));
         }
+        console.log("\n")
     } else {
         console.log("Group not active: " + this.g.id);
     }
