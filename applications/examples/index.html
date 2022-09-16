@@ -260,6 +260,9 @@
                                     </button>
                                 </td>
                                 <td><span id="counter_1_value"></span></td>
+                                <td><span id="counter_1_trust"></span></td>
+                                <td><span id="counter_1_delta"></span></td>
+                                <td><span id="counter_1_result"></span></td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -274,6 +277,9 @@
                                     </button>
                                 </td>
                                 <td><span id="counter_2_value"></span></td>
+                                <td><span id="counter_2_trust"></span></td>
+                                <td><span id="counter_2_delta"></span></td>
+                                <td><span id="counter_2_result"></span></td>
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -288,6 +294,9 @@
                                     </button>
                                 </td>
                                 <td><span id="counter_3_value"></span></td>
+                                <td><span id="counter_3_trust"></span></td>
+                                <td><span id="counter_3_delta"></span></td>
+                                <td><span id="counter_3_result"></span></td>
                             </tr>
                             </tbody>
                         </table>
@@ -838,14 +847,23 @@
         counter_1.setOnStateChange(function (updates, meta) {
             console.log("Counter 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(counter_1.getValue()));
             $("#counter_1_value")[0].textContent = counter_1.getValue();
+            $("#counter_1_trust")[0].textContent = 1;
+            $("#counter_1_delta")[0].textContent = 1;
+            $("#counter_1_result")[0].textContent = 1;
         });
         counter_2.setOnStateChange(function (updates, meta) {
             console.log("Counter 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(counter_2.getValue()));
             $("#counter_2_value")[0].textContent = counter_2.getValue();
+            $("#counter_2_trust")[0].textContent = 2;
+            $("#counter_2_delta")[0].textContent = 2;
+            $("#counter_2_result")[0].textContent = 2;
         });
         counter_3.setOnStateChange(function (updates, meta) {
             console.log("Counter 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(counter_3.getValue()));
             $("#counter_3_value")[0].textContent = counter_3.getValue();
+            $("#counter_3_trust")[0].textContent = 3;
+            $("#counter_3_delta")[0].textContent = 3;
+            $("#counter_3_result")[0].textContent = 3;
         });
 
         //Set:
@@ -907,6 +925,7 @@
         $("#inc_1").removeClass("disabled");
         $("#dec_1").removeClass("disabled");
         $("#counter_1_value")[0].textContent = counter_1.getValue();
+        //$("#counter_1_trust")[1].textContent = counter_1.getValue();
         $("#inc_2").removeClass("disabled");
         $("#dec_2").removeClass("disabled");
         $("#counter_2_value")[0].textContent = counter_2.getValue();
