@@ -23,6 +23,18 @@ var delta_counter = {
             }
             return value;
         },
+        getTrust: function () {
+            var trust = 0;
+            //var decKeys = this.state.dec.keys();
+            //var incKeys = this.state.inc.keys();
+            // for (var decKey = 0; decKey < decKeys.length; decKey++) {
+            //     value -= this.state.dec.get(decKeys[decKey]);
+            // }
+            // for (var incKey = 0; incKey < incKeys.length; incKey++) {
+            //     value += this.state.inc.get(incKeys[incKey]);
+            // }
+            return trust;
+        },
         operations: {
             increment: {
                 local: function (amount, metadata) {

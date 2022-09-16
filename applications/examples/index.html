@@ -785,6 +785,9 @@
     var objectStore = null;
     var messageAPI = null;
     var counter_1, counter_2, counter_3;
+    var trust1 = 50, trust2 = 50, trust3 = 50;
+    var delta1, delta2, delta3;
+    var result1, result2, result3;
     //var map_1, map_2, map_3;
     //var set_1, set_2, set_3;
     //var list_1, list_2, list_3;
@@ -847,23 +850,23 @@
         counter_1.setOnStateChange(function (updates, meta) {
             console.log("Counter 1 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(counter_1.getValue()));
             $("#counter_1_value")[0].textContent = counter_1.getValue();
-            $("#counter_1_trust")[0].textContent = 1;
-            $("#counter_1_delta")[0].textContent = 1;
-            $("#counter_1_result")[0].textContent = 1;
+            $("#counter_1_trust")[0].textContent = trust1 + "%";
+            $("#counter_1_delta")[0].textContent = delta1;
+            $("#counter_1_result")[0].textContent = result1;
         });
         counter_2.setOnStateChange(function (updates, meta) {
             console.log("Counter 2 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(counter_2.getValue()));
             $("#counter_2_value")[0].textContent = counter_2.getValue();
-            $("#counter_2_trust")[0].textContent = 2;
-            $("#counter_2_delta")[0].textContent = 2;
-            $("#counter_2_result")[0].textContent = 2;
+            $("#counter_2_trust")[0].textContent = trust2 + "%";
+            $("#counter_2_delta")[0].textContent = delta2;
+            $("#counter_2_result")[0].textContent = result2;
         });
         counter_3.setOnStateChange(function (updates, meta) {
             console.log("Counter 3 change: " + JSON.stringify(updates) + " " + JSON.stringify(meta) + " value: " + JSON.stringify(counter_3.getValue()));
             $("#counter_3_value")[0].textContent = counter_3.getValue();
-            $("#counter_3_trust")[0].textContent = 3;
-            $("#counter_3_delta")[0].textContent = 3;
-            $("#counter_3_result")[0].textContent = 3;
+            $("#counter_3_trust")[0].textContent = trust3 + "%";
+            $("#counter_3_delta")[0].textContent = delta3;
+            $("#counter_3_result")[0].textContent = result3;
         });
 
         //Set:
@@ -925,7 +928,6 @@
         $("#inc_1").removeClass("disabled");
         $("#dec_1").removeClass("disabled");
         $("#counter_1_value")[0].textContent = counter_1.getValue();
-        //$("#counter_1_trust")[1].textContent = counter_1.getValue();
         $("#inc_2").removeClass("disabled");
         $("#dec_2").removeClass("disabled");
         $("#counter_2_value")[0].textContent = counter_2.getValue();
@@ -1009,30 +1011,147 @@
             messageAPI.broadcast("Message", {value: message, from: name});
         }
     };
+
+    var SLA = function (delta, trust) {
+        if (trust >= 90 && delta <= 12) {
+            return true
+        }
+        else if (trust >= 65 && trust < 89 && delta <= 10) {
+            return true
+        }
+        else if (trust >= 50 && trust < 64 && delta <= 8) {
+            return true
+        }
+        else if (trust >= 25 && trust < 49 && delta <= 5) {
+            return true
+        }
+        else if (trust >= 0 && trust < 24 && delta <= 2) {
+            return true
+        }
+    }
    
     var inc_1 = function () {
-        var x = Math.floor(Math.random() * 10) + 1;
-        counter_1.increment(x);
+        var x = Math.floor(Math.random() * 15) + 1;
+        delta1 = x
+        var decision = SLA(delta1, trust1)
+
+        if (decision == true) {
+            counter_1.increment(x);
+            if (trust1 < 100) {
+                trust1 += 5
+            }
+            result1 = "Accepted"
+        }
+        else {
+            if (trust1 > 0) {
+                trust1 -= 5
+            }
+            result1 = "Rejected"
+        }
     };
     var dec_1 = function () {
-        var x = Math.floor(Math.random() * 10) + 1;
-        counter_1.decrement(x);
+        var x = Math.floor(Math.random() * 15) + 1;
+        delta1 = x
+        var decision = SLA(delta1, trust1)
+
+        if (decision == true) {
+            counter_1.decrement(x);
+            if (trust1 < 100) {
+                trust1 += 5
+            }
+            result1 = "Accepted"
+        }
+        else {
+            if (trust1 > 0) {
+                trust1 -= 5
+            }
+            result1 = "Rejected"
+        }
+        //counter_1.decrement(x);
     };
     var inc_2 = function () {
-        var x = Math.floor(Math.random() * 10) + 1;
-        counter_2.increment(x);
+        var x = Math.floor(Math.random() * 15) + 1;
+        delta2 = x
+        var decision = SLA(delta2, trust2)
+
+        if (decision == true) {
+            counter_2.increment(x);
+            if (trust2 < 100) {
+                trust2 += 5
+            }
+            result2 = "Accepted"
+        }
+        else {
+            if (trust2 > 0) {
+                trust2 -= 5
+            }
+            result2 = "Rejected"
+        }
+
+        //counter_2.increment(x);
     };
     var dec_2 = function () {
-        var x = Math.floor(Math.random() * 10) + 1;
-        counter_2.decrement(x);
+        var x = Math.floor(Math.random() * 15) + 1;
+        delta2 = x
+        var decision = SLA(delta2, trust2)
+
+        if (decision == true) {
+            counter_2.decrement(x);
+            if (trust2 < 100) {
+                trust2 += 5
+            }
+            result2 = "Accepted"
+        }
+        else {
+            if (trust2 > 5) {
+                trust2 -= 5
+            }
+            result2 = "Rejected"
+        }
+
+        //counter_2.decrement(x);
     };
     var inc_3 = function () {
-        var x = Math.floor(Math.random() * 10) + 1;
-        counter_3.increment(x);
+        var x = Math.floor(Math.random() * 15) + 1;
+        delta3 = x
+        var decision = SLA(delta3, trust3)
+
+        if (decision == true) {
+            counter_3.increment(x);
+            if (trust3 < 100) {
+                trust3 += 5
+            }
+            result3 = "Accepted"
+        }
+        else {
+            if (trust3 > 5) {
+                trust3 -= 5
+            }
+            result3 = "Rejected"
+        }
+
+        //counter_3.increment(x);
     };
     var dec_3 = function () {
-        var x = Math.floor(Math.random() * 10) + 1;
-        counter_3.decrement(x);
+        var x = Math.floor(Math.random() * 15) + 1;
+        delta3 = x
+        var decision = SLA(delta3, trust3)
+
+        if (decision == true) {
+            counter_3.decrement(x);
+            if (trust3 < 100) {
+                trust3 += 5
+            }
+            result3 = "Accepted"
+        }
+        else {
+            if (trust3 > 5) {
+                trust3 -= 5
+            }
+            result3 = "Rejected"
+        }
+
+        //counter_3.decrement(x);
     };
     // var setChanged = function (list_html_id, array, number) {
     //     $(list_html_id)[0].innerHTML = "";

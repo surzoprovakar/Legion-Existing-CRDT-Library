@@ -40,6 +40,7 @@ function CRDT(objectID, crdt, objectStore) {
      * @type {Function}
      */
     this.getValue = crdt.crdt.getValue;
+    this.getTrust = crdt.crdt.getTrust;
 
     /**
      * Assigns local operations.

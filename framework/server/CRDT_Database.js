@@ -137,6 +137,7 @@ CRDT_Database.prototype.clearPeersQueue = function () {
     }
 };
 
+
 CRDT_Database.prototype.saveToDisk = function () {
     if (this.g.nodes.size() > 0) {
         console.log("Group active: " + this.g.id);
@@ -144,7 +145,9 @@ CRDT_Database.prototype.saveToDisk = function () {
         //console.log(keys)
         console.log("\n")
         for (var i = 0; i < keys.length; i++) {
-            console.log("    KEY: " + keys[i] + " VALUE: " + JSON.stringify(this.get(keys[i]).getValue())) //+ " VV: " + JSON.stringify(this.get(keys[i]).versionVector.toJSONString()));
+            console.log("    KEY: " + keys[i] 
+            + " VALUE: " + JSON.stringify(this.get(keys[i]).getValue())
+            + " TRUST: " + this.get(keys[i])) //+ " VV: " + JSON.stringify(this.get(keys[i]).versionVector.toJSONString()));
         }
         console.log("\n")
     } else {
